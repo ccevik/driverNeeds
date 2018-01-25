@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Events</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel='stylesheet' href="{% static 'vendor/bootstrap/css/bootstrap.min.css' type='text/css' %}"/>
+
+
+
+    <!-- Custom styles for this template -->
+    <link rel='stylesheet' href="{% static 'css/small-business.css' type='text/css' %}"/>
+    <link rel='stylesheet' href="{% static 'index.css' typ='text/css' %}" />
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">All Driver needs - Events</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'the_wait_point' %}">Wait Point</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'the_calendar' %}">Calendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'the_calendar' %}">Tracker</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Heading Row -->
+      <div class="row my-4">
+        <div class="col-lg-8">
+          {% block content %}{% endblock content %}
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-4">
+          {% block top_news %}{% endblock top_news %}
+        </div>
+        <!-- /.col-md-4 -->
+      </div>
+      <!-- /.row -->
+
+      <!-- Call to Action Well -->
+      <div class="card text-white bg-secondary my-4 text-center">
+        <div class="card-body">
+          <p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p>
+        </div>
+      </div>
+
+      <!-- Content Row -->
+      <div class="row">
+        {% block driver_needs_one %}{% endblock driver_needs_one %}
+        <!-- /.col-md-4 -->
+        {% block driver_needs_two %}{% endblock driver_needs_two %}
+        <!-- /.col-md-4 -->
+        {% block driver_needs_three %}{% endblock driver_needs_three %}
+        <!-- /.col-md-4 -->
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; All driver needs </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <link rel='stylesheet' href="{% static 'vendor/jquery/jquery.min.js' type='text/css' %}"/>
+    <link rel='stylesheet' href="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' type='text/css' %}"/>
+
+
+    <!-- Map Script-->
+
+    <script src="{% static 'map_script.js' %}" type="text/javascript"></script>
+
+    <!-- knockout js -->
+    <script src="{% static 'knockout.js' %}"></script>
+    <!-- Custom scripts -->
+  <script src="{% static 'app.js' %}"></script>
+
+    <!-- map javascript --> 
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgsaBDcnc7qo-yZjQ4DB97Ubq_C7_Odo8&callback=initMap">
+    </script> 
+
+
+  </body>
+</html>
